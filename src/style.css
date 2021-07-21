@@ -1,0 +1,161 @@
+body {
+    background-color: rgb(117, 183, 185);
+    padding: 0;
+    margin: 0;
+    font-family: 'Balsamiq Sans', cursive;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.palya {
+    background-color: rgb(141, 219, 219);
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 1450px;
+    height: 650px;
+    display: none;
+}
+
+.jatekosElvalaszto {
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+.bejelentkezes {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+input {
+    border-radius: 8px;
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+.inditas {
+    text-align: center;
+}
+
+button {
+    border-radius: 5px;
+    background-color: aliceblue;
+    width: 75px;
+}
+
+.jatekos {
+    margin: 25px;
+    margin-top: 15%;
+}
+
+.fent {
+    width: 100%;
+    background-color: aquamarine;
+    position: sticky;
+}
+
+.eredmenyjelzo {
+    height: 40px;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    background-color: aquamarine;
+}
+
+.eredmenyek {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.vonal {
+    border-style: solid;
+    border-color: #2587f6;
+    background-color: #3d7ce0;
+    width: 100%;
+    height: 5px;
+}
+
+.kerdes {
+    width: auto;
+    text-align: center;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 29%;
+}
+
+.hogyan {
+    background-color: rgb(141, 219, 219);
+    width: 30%;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 3%;
+}
+
+.hogyan h2 {
+    text-align: center;
+}
+
+.mennyisegSorsolas {
+    text-align: center;
+    font-size: 40px;
+}
+
+.mennyisegSorsolas p,
+.mennyisegSorsolas span {
+    padding-top: 14%;
+}
+
+.kiFogKezdeni {
+    text-align: center;
+}
+
+.kiFogKezdeni p {
+    font-size: 30px;
+    padding-top: 5%;
+}
+
+.iranyitas {
+    font-size: 35px;
+    text-align: center;
+    display: none;
+}
+
+.iranyitasGombok {
+    padding: 15px;
+}
+
+.palcikak {
+    padding-top: 5%;
+}
+
+.palcika {
+    float: left;
+}
+
+.nyertesKepernyo {
+    padding-top: 11%;
+    display: none;
+    position: relative;
+    text-align: center;
+}
+
+.nyertesKepernyo ul {
+    font-size: 19px;
+    padding: 5px;
+    position: relative;
+    left: 41%;
+    text-align: left;
+}
+
+.szamlalo {
+    text-align: center;
+    padding-top: 18%;
+}
