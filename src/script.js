@@ -1,7 +1,3 @@
-const startGomb = document.querySelector('.startGomb')
-const jatekos1SzovegDoboz = document.querySelector('#jatekos1')
-const jatekos2SzovegDoboz = document.querySelector('#jatekos2')
-
 // Változók
 let jatekosok = {}
 let palcikak = 0
@@ -12,6 +8,12 @@ let lepesekSzama2 = 0
 let idoTartamPerc = 0
 let idoTartamMasodperc = 0
 let folyamatban = false
+
+
+// Start gombra való kattintás, név bekérés
+const startGomb = document.querySelector('.startGomb')
+const jatekos1SzovegDoboz = document.querySelector('#jatekos1')
+const jatekos2SzovegDoboz = document.querySelector('#jatekos2')
 
 startGomb.addEventListener('click', (e) => {
     if (jatekos1SzovegDoboz.value.length != 0) {
@@ -40,7 +42,7 @@ startGomb.addEventListener('click', (e) => {
 })
 
 
-
+// Ki fog kezdeni ablak, és a random szám megjelenítése
 const bejelentkezoKepernyo = document.querySelector('.bejelentkezes')
 const kerdesFelirat = document.querySelector('.kerdes')
 const aJatekRolKepernyo = document.querySelector('.hogyan')
@@ -70,6 +72,7 @@ function kiFogKezdeni() {
 
 }
 
+// Számláló
 const szamlaloKijelzo = document.querySelector('.szamlalo')
 
 function idoTartamSzamlalas() {
@@ -84,28 +87,17 @@ function idoTartamSzamlalas() {
     }
 }
 
+// Számláló ciklusa
 const szamlaloCiklus = window.setInterval(function() {
     idoTartamSzamlalas()
 }, 1000);
 
 
+// Játék indítása
 const mennyisegSorsolasAblak = document.querySelector('.mennyisegSorsolas')
 const kiFogKezdeniAblak = document.querySelector('.kiFogKezdeni')
 const kiKovetkezikKijelzo = document.querySelector('.kiKovetkezikKijelzo')
 const iranyitasok = document.querySelector('.iranyitas')
-const elvesz1 = document.querySelector('#elveszek1')
-const elvesz2 = document.querySelector('#elveszek2')
-
-
-
-
-elvesz1.addEventListener('click', () => {
-    elvesz(1)
-})
-
-elvesz2.addEventListener('click', () => {
-    elvesz(2)
-})
 
 function jatekInditas(kiKezd) {
     folyamatban = true
@@ -125,9 +117,19 @@ function jatekInditas(kiKezd) {
     }
 
 }
+const elvesz1 = document.querySelector('#elveszek1')
+const elvesz2 = document.querySelector('#elveszek2')
+
+elvesz1.addEventListener('click', () => {
+    elvesz(1)
+})
+
+elvesz2.addEventListener('click', () => {
+    elvesz(2)
+})
 
 
-
+// Következő játékos felcserélése
 function forditas() {
     if (eppenKiLep == 1) {
         eppenKiLep = 2
@@ -138,6 +140,9 @@ function forditas() {
     }
 }
 
+
+
+// Pálcika elvétel 
 const jelenlegiPalcikaKijelzo = document.querySelector('.jelenlegiPalcikaKijelzo')
 
 function elvesz(mennyit) {
@@ -155,6 +160,7 @@ function elvesz(mennyit) {
     }
 }
 
+// Játék vége, statisztikák kijelző
 const nyertesKepernyo = document.querySelector('.nyertesKepernyo')
 const kiNyertKijelzo = document.querySelector('.kiNyertKijelzo')
 const statisztikakDoboz = document.querySelector('.statisztikak')
@@ -183,7 +189,7 @@ function jatekVege() {
         `
 }
 
-
+// Új kör kezdése a játék vége ablakból
 function ujKor() {
     valtozokAlaphelyzetbe()
     kiFogKezdeni()
@@ -193,7 +199,7 @@ function ujKor() {
     kiFogKezdeniAblak.style.display = 'block'
 }
 
-
+// Változók alaphelyzetbe állítása uj kör kezdése esetén
 function valtozokAlaphelyzetbe() {
     palcikak = 0
     osszLepesekSzama = 0
@@ -204,6 +210,8 @@ function valtozokAlaphelyzetbe() {
     folyamatban = false
 }
 
+
+// Megadott mennyiségő pálcikák megjelenítése
 const palcikakDoboza = document.querySelector('.palcikak')
 
 function palcikakMegjelenitese(mennyiseg) {
@@ -218,7 +226,7 @@ function palcikakMegjelenitese(mennyiseg) {
 }
 
 
-
+// Lenti eredményjelző frissítés
 const jatekosKijelzo1 = document.querySelector('.jatekos1')
 const jatekosKijelzo2 = document.querySelector('.jatekos2')
 const jatekosElvalaszto = document.querySelector('.jatekosElvalaszto')
@@ -229,7 +237,7 @@ function eredmenyjelzoMegjelenites(jatekosok) {
     jatekosElvalaszto.innerHTML = ' - '
 }
 
-
+// Random mennyiségő pálcikák generálása
 const palcikaMennyisegKijelzo = document.querySelector('.mennyisegSorsolasKijelzo')
 
 function palcikaMennyisegGeneralas() {
@@ -237,7 +245,7 @@ function palcikaMennyisegGeneralas() {
     palcikaMennyisegKijelzo.innerHTML = `<strong>${palcikak}</strong>`
 }
 
-
+// Hiba
 function hiba(hibakod) {
     if (hibakod == 0) {
         alert('Kérlek adj meg kettő nevet a kezdéshez!')
@@ -247,6 +255,7 @@ function hiba(hibakod) {
     }
 }
 
+// Random szám generálás funckió
 function randomSzam(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
